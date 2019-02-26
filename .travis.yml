@@ -1,0 +1,19 @@
+language: java
+jdk:
+- oraclejdk8
+script: mvn clean test package
+notifications:
+  email: false
+deploy:
+  provider: releases
+  api_key:
+    secure: esD02uQgAX35g517lo5ftDc6NKQjmgManqC77cBU730gaz1ctm2146YLdCVnV2j3W1j2CxZAGTeJlOKlk+FWd8zxyqtxAoRj5+HqXvD2m7OYRVLZirRSsgft+T0hhRaREicFQmeDJmD/xClcPItzRoMJTayty70BoNUn0GVgMt/b1NwQu6xs/CWAixslSuXn6/362u1pinWeZgDLXC4bVBKFQdkAg0wDeQJvMVMiOZQCHg7QXQT34vS/28gQPXNZykTL0TZpiwfCKsxjNxfCLsZIMAou3t6m1uu1r5yvjeHpUOkZsi2f1Sm+DZrkMPNY3zioPGiY5gkxFng81tccBI1wFtgCvdjdOgseQVgyYXQYMIaG6uY/xgNTfeKgUykVIquB6j6iXu68IrnhjwLcKpleBsCPT4t7aWWy6BrVD90omIZ9lFxzmuWqHB4hKZtVmf4zXvI3rCC/xBHu8VMG/KVU9XnLLn3dJ7sEEErL1Iw4oPEE7aZ5siLMoyn85ksGWRnEKNIhvRIpvqdxtfDOLPwuZmhvg5gJnWyBLvO6sj36hiEW8uwoDzK5c8iDORH7ugbgRgqEMqM9Apwl4YupKUKdBbCmKp5ZdZAc/Sn0vqGcoF10POtdychtf8Mmns5lBZq5q+arEeUcyhSIRajCiCcmeNc5oxyPi9nQQJQuPHY=
+  file_glob: true
+  file: "target/eltermc-plugin*.jar"
+  skip_cleanup: true
+  on:
+    repo: enolgor/eltermc-plugin
+    tags: true
+    branches:
+      only:
+        - master

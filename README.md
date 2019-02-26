@@ -1,0 +1,1 @@
+![BuildStatus](https://travis-ci.org/enolgor/eltermc-plugin.svg?branch=master)

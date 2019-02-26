@@ -1,0 +1,8 @@
+message: hello!
+
+features:
+  levelPenaltyOnDeath:
+    enabled: true
+  levelBooks:
+    enabled: true
+    ownerCheck: false

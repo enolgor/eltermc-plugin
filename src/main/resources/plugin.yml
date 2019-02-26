@@ -1,0 +1,7 @@
+name: EltermcPlugin
+main: es.enolgor.eltermc.plugin.EltermcPlugin
+version: 1.0
+api-version: 1.13
+commands:
+  eltermc:
+    description: Control plugin
