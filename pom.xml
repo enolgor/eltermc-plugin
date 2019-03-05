@@ -20,6 +20,18 @@
 			<version>1.13.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.dumptruckman.minecraft</groupId>
+			<artifactId>JsonConfiguration</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<!-- Required json dependency because no other json lib can handle numbers 
+			appropriately. -->
+		<dependency>
+			<groupId>net.minidev</groupId>
+			<artifactId>json-smart</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${final.name}</finalName>
@@ -64,6 +76,10 @@
 		<repository>
 			<id>papermc</id>
 			<url>https://papermc.io/repo/repository/maven-public/</url>
+		</repository>
+		<repository>
+			<id>onarandombox</id>
+			<url>http://repo.onarandombox.com/content/groups/public</url>
 		</repository>
 	</repositories>
 </project>

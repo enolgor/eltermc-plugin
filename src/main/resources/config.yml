@@ -6,3 +6,5 @@ features:
   levelBooks:
     enabled: true
     ownerCheck: false
+  testFeature:
+    enabled: true
