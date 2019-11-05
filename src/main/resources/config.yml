@@ -6,5 +6,6 @@ features:
   levelBooks:
     enabled: true
     ownerCheck: false
-  testFeature:
+  webInventory:
     enabled: true
+    server: http://localhost:3000

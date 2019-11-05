@@ -1,5 +1,8 @@
-package es.enolgor.eltermc.plugin.features;
+package es.enolgor.eltermc.plugin.features.webinventory;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 /*
  * Copyright (c) 2015. Starlis LLC / dba Empire Minecraft
  *
@@ -15,9 +18,16 @@ import org.bukkit.inventory.ItemStack;
 import com.dumptruckman.bukkit.configuration.json.JsonConfiguration;
 
 
-public class Util2 {
+public class Util {
 
-    public static void initialize() {
+    public static String serializeInventoryB64(ItemStack [] inventoryItems) throws UnsupportedEncodingException {
+    	String jsonInventoryItems = Util.serializeInventory(inventoryItems);
+		return Base64.getEncoder().encodeToString(jsonInventoryItems.getBytes("utf8"));
+    }
+    
+    public static ItemStack [] deserializeInventoryB64(String b64InventoryItems) throws UnsupportedEncodingException, InvalidConfigurationException {
+    	String jsonInventoryItems = new String(Base64.getDecoder().decode(b64InventoryItems.getBytes(StandardCharsets.ISO_8859_1)), "utf8");
+		return Util.deserializeInventory(jsonInventoryItems);
     }
 
     public static String serializeInventory(ItemStack [] is) {
